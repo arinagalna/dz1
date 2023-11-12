@@ -24,5 +24,8 @@ void quickSort(vector<string>& arr, int left, int right) {
 }
 
 void QuickSort::Sort(vector<string>& arr) {
+    if (arr.size() == 0) {
+        return;
+    }
     quickSort(arr, 0, arr.size() - 1);
 }
