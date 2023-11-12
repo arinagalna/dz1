@@ -16,7 +16,7 @@ string readFile(const string& fileName)
     ifstream file(fileName);
     if (!file.is_open())
     {
-        throw runtime_error("Could not open file " + fileName);
+        return "";
     }
 
     stringstream buffer;
@@ -52,16 +52,24 @@ void printStrings(const vector<string>& strings) {
 
 int main()
 {   
-    string fullStr = readFile("in.txt");
-    cout << fullStr << endl << endl;
+    while (true) {
+        string fileName;
+        cin >> fileName;
+        if (fileName == "q") {
+            break;
+        }
 
-    vector<string> words = split(fullStr);
+        string fullStr = readFile(fileName);
+        cout << fullStr << endl << endl;
 
-    Sorter* sorter =  new QuickSort();
-    
-    sorter->Sort(words);
+        vector<string> words = split(fullStr);
 
-    printStrings(words); cout << endl;
-    
+        Sorter* sorter = new QuickSort();
+
+        sorter->Sort(words);
+
+        printStrings(words);
+        cout << endl;
+    }    
 }
 

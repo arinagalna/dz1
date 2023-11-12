@@ -31,6 +31,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="in.txt" />
+    <Text Include="valid.txt" />
   </ItemGroup>
 </Project>
