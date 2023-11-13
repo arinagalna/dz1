@@ -78,13 +78,18 @@ int main()
 
         // Чтение файла
         string fullStr = readFile(fullFileName);
-        cout << fullStr << endl << endl;
+        if (fullStr.size() == 0) {
+            cout << "ERROR! File \"" << fileName << "\" is empty" << endl;
+            continue;
+        }
+        cout << fullStr << endl;
 
         // Валидация текста
         if (!validateString(fullStr)) {
-            cout << "file " << fileName << " is invalid" << endl;
+            cout << "ERROR! file \"" << fileName << "\" is invalid" << endl;
             continue;
         }
+        cout << endl;
 
         // Разбиение текста по словам
         vector<string> words = split(fullStr);
