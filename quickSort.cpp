@@ -23,6 +23,11 @@ void quickSort(vector<string>& arr, int left, int right) {
         quickSort(arr, i, right);
 }
 
+QuickSort::QuickSort()
+{
+    sortedName = "quick sort";
+}
+
 void QuickSort::Sort(vector<string>& arr) {
     if (arr.size() == 0) {
         return;

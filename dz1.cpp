@@ -68,6 +68,7 @@ int main()
 
         sorter->Sort(words);
 
+        cout << sorter->sortedName << endl;
         printStrings(words);
         cout << endl;
     }    
