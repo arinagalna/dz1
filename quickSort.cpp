@@ -26,7 +26,7 @@ void quickSort(vector<string>& arr, int left, int right) {
 // Реализация конструктора
 QuickSort::QuickSort()
 {
-    sorterName = "quick sort";
+    this->sorterName = "quick sort";
 }
 
 // Реализация быстрой сортировки

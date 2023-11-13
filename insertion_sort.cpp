@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 void insertionSort(vector<string>& words) {
     int n = words.size();
     
@@ -25,9 +24,8 @@ void insertionSort(vector<string>& words) {
 
 InsertionSort::InsertionSort()
 {
-    sortedName = "insertion sort";
+    this->sorterName = "insertion sort";
 }
-
 
 void InsertionSort::Sort(vector<string>& words) {
     if (words.size() == 0) {

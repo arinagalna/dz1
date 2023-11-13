@@ -10,6 +10,7 @@
 
 #include "sorter.h" 
 #include "quickSort.h"
+#include "insertion_sort.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -69,7 +70,8 @@ int main()
 {   
     // Инициализация сортировок
     Sorter* sorters[]{
-        new QuickSort()
+        new QuickSort(),
+        new InsertionSort()
     };
 
     while (true) {
