@@ -7,7 +7,7 @@ using namespace std;
 class Sorter
 {
 public:
-	string sortedName;
+	string sorterName;
 
 	virtual void Sort(vector<string>& arr) = 0;
 };

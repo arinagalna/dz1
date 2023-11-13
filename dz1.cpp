@@ -90,7 +90,7 @@ int main()
         for (Sorter* sorter : sorters) {
             sorter->Sort(words);
 
-            cout << sorter->sortedName << endl << stringsToLine(words) << endl << endl;
+            cout << sorter->sorterName << endl << stringsToLine(words) << endl << endl;
         }
     }    
 }

@@ -25,7 +25,7 @@ void quickSort(vector<string>& arr, int left, int right) {
 
 QuickSort::QuickSort()
 {
-    sortedName = "quick sort";
+    sorterName = "quick sort";
 }
 
 void QuickSort::Sort(vector<string>& arr) {
