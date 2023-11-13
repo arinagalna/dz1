@@ -127,19 +127,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="mergeSort.cpp" />
     <ClCompile Include="dz1.cpp" />
     <ClCompile Include="insertion_sort.cpp" />
     <ClCompile Include="quickSort.cpp" />
+    <ClCompile Include="Shaiker.cpp" />
+    <ClCompile Include="sortChoice.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mergeSort.h" />
     <ClInclude Include="insertion_sort.h" />
     <ClInclude Include="quickSort.h" />
+    <ClInclude Include="Shaiker.h" />
+    <ClInclude Include="sortChoice.h" />
     <ClInclude Include="sorter.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input\invalid.txt" />
+    <Text Include="input\small.txt" />
     <Text Include="input\valid.txt" />
-    <Text Include="valid.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitattributes" />

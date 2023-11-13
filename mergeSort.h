@@ -2,10 +2,10 @@
 #include "sorter.h"
 
 // Сортировка - быстрая сортировка наследуется от интерфейса Sorter
-class QuickSort : public Sorter
+class MergeSort : public Sorter
 {
 public:
-    QuickSort();                                // Объявление конструктора
+    MergeSort();                                // Объявление конструктора
 
     void Sort(vector<string>& arr) override;    // Объявление сортировки
 };
