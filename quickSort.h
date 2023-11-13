@@ -1,11 +1,12 @@
 #pragma once
 #include "sorter.h"
 
+// Сортировка - быстрая сортировка
 class QuickSort : public Sorter
 {
 public:
-    QuickSort();
+    QuickSort();                                // Объявление конструктора
 
-    void Sort(vector<string>& arr) override;
+    void Sort(vector<string>& arr) override;    // Объявление сортировки
 };
 

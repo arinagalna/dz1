@@ -4,11 +4,12 @@
 
 using namespace std;
 
+// Интерфейс сортера
 class Sorter
 {
 public:
-	string sorterName;
+	string sorterName;							// Имя сортировки
 
-	virtual void Sort(vector<string>& arr) = 0;
+	virtual void Sort(vector<string>& arr) = 0;	// Метод интерфейса
 };
 

@@ -61,11 +61,13 @@ string stringsToLine(const vector<string>& strings) {
 
 int main()
 {   
+    // Инициализация сортировок
     Sorter* sorters[]{
         new QuickSort()
     };
 
     while (true) {
+        // Ввод имени файла
         cout << "filename: ";
         string fileName;
         cin >> fileName;
@@ -74,19 +76,20 @@ int main()
         }
         string fullFileName = "input/" + fileName;
 
-
+        // Чтение файла
         string fullStr = readFile(fullFileName);
         cout << fullStr << endl << endl;
 
+        // Валидация текста
         if (!validateString(fullStr)) {
             cout << "file " << fileName << " is invalid" << endl;
             continue;
         }
 
+        // Валидация Разбиение текста по словам
         vector<string> words = split(fullStr);
 
-        Sorter* sorter = new QuickSort();
-
+        // Сортировка текста каждой сортировкой
         for (Sorter* sorter : sorters) {
             sorter->Sort(words);
 

@@ -1,6 +1,6 @@
 #include "quickSort.h"
 
-// функция быстрой сортировки 
+
 void quickSort(vector<string>& arr, int left, int right) {
     int i = left, j = right;
     string pivot = arr[(left + right) / 2];
@@ -23,11 +23,13 @@ void quickSort(vector<string>& arr, int left, int right) {
         quickSort(arr, i, right);
 }
 
+// Реализация конструктора
 QuickSort::QuickSort()
 {
     sorterName = "quick sort";
 }
 
+// Реализация быстрой сортировки
 void QuickSort::Sort(vector<string>& arr) {
     if (arr.size() == 0) {
         return;
