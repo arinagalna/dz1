@@ -44,14 +44,21 @@ vector<string> split(const string& s) {
     return words;
 }
 
-void printStrings(const vector<string>& strings) {
-    for (const auto& str : strings) {
-        cout << str << endl;
+string stringsToLine(const vector<string>& strings) {
+    string res;
+    for (int i = 0; i < strings.size(); i++) {
+        if (i != 0) { res += ' '; }
+        res += strings[i];
     }
+    return res;
 }
 
 int main()
 {   
+    Sorter* sorters[]{
+        new QuickSort()
+    };
+
     while (true) {
         string fileName;
         cin >> fileName;
@@ -66,11 +73,11 @@ int main()
 
         Sorter* sorter = new QuickSort();
 
-        sorter->Sort(words);
+        for (Sorter* sorter : sorters) {
+            sorter->Sort(words);
 
-        cout << sorter->sortedName << endl;
-        printStrings(words);
-        cout << endl;
+            cout << sorter->sortedName << endl << stringsToLine(words) << endl;
+        }
     }    
 }
 
