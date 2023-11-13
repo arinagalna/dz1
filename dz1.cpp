@@ -3,14 +3,16 @@
 #include <sstream>
 #include <string>
 #include <algorithm>
-#include <ranges> 
-#include <fstream> 
-#include <regex> 
+#include <ranges>
+#include <fstream>
+#include <regex>
+#include <chrono> 
 
 #include "sorter.h" 
 #include "quickSort.h"
 
 using namespace std;
+using namespace std::chrono;
 
 // Функция чтения файла
 string readFile(const string& fileName)
@@ -100,9 +102,13 @@ int main()
 
         // Сортировка текста каждой сортировкой
         for (Sorter* sorter : sorters) {
+            auto start = high_resolution_clock::now();
             sorter->Sort(words);
+            auto stop = high_resolution_clock::now();
 
-            cout << sorter->sorterName << endl << stringsToLine(words) << endl << endl;
+            auto duration = duration_cast<microseconds>(stop - start);
+            cout << sorter->sorterName << endl << "time: " << duration.count() << endl
+                << stringsToLine(words) << endl << endl;
         }
     }    
 }
