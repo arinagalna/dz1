@@ -12,6 +12,7 @@
 
 using namespace std;
 
+// Функция чтения файла
 string readFile(const string& fileName)
 {
     ifstream file(fileName);
@@ -25,11 +26,13 @@ string readFile(const string& fileName)
     return buffer.str();
 }
 
+// Функция валидация текста через регулярное выражения
 bool validateString(const string& str) {
     regex reg("^[a-zA-Z \n]*$"); 
     return regex_match(str, reg);
 }
 
+// Функция разбиения текста по словам
 vector<string> split(const string& s) {
     vector<string> words;
     string word;
@@ -50,6 +53,7 @@ vector<string> split(const string& s) {
     return words;
 }
 
+// Функция соединения слов в строку через пробел
 string stringsToLine(const vector<string>& strings) {
     string res;
     for (int i = 0; i < strings.size(); i++) {
