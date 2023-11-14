@@ -44,7 +44,7 @@ void shakerSort(vector<string>& arr) {
 
 ShaikerSort::ShaikerSort()
 {
-    sorterName = "choice sort";
+    sorterName = "shaiker sort";
 }
 
 

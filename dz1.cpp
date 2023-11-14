@@ -7,13 +7,16 @@
 #include <fstream>
 #include <regex>
 #include <chrono> 
+#include <filesystem>
 
 #include "sorter.h" 
 #include "quickSort.h"
 #include "insertion_sort.h"
 #include "mergeSort.h"
 #include "sortChoice.h"
+#include "Shaiker.h"
 #include "buble.h"
+
 
 using namespace std;
 using namespace std::chrono;
@@ -33,10 +36,10 @@ string readFile(const string& fileName)
 }
 
 // Функция валидация текста через регулярное выражения
-bool validateString(const string& str) {
+/*bool validateString(const string& str) {
     regex reg("^[a-zA-Z \n]*$"); 
     return regex_match(str, reg);
-}
+}*/
 
 // Функция разбиения текста по словам
 vector<string> split(const string& s) {
@@ -50,12 +53,27 @@ vector<string> split(const string& s) {
             }
         }
         else {
-            word += c;
+            if (((c >= '!' && c <= '@') || (c >= '[' && c <= '`') || (c >= '{')) && c != '-') {
+                word += "";
+            }
+            else {
+                word += c;
+            }
+
         }
+
     }
-    if (!word.empty()) {
+    if (!word.empty()) {/*
+        for (int i = 0; i < word.size(); i++) {
+            cout << word+" "+ word[i] << endl;
+            if ((word[i] >= '!' && word[i] <= '@') || (word[i] >= '[' && word[i] <= '`') || (word[i] >= '{')) {
+                word.erase(i);
+            }
+        }
+        */
         words.push_back(word);
     }
+
     return words;
 }
 
@@ -81,6 +99,27 @@ bool equalStrings(const vector<string>& stringsA, const vector<string>& stringsB
     return true;
 }
 
+/*
+void save_file(const vector<string>& strings)
+{   
+
+    ofstream out;
+    string f_name;
+    cout << "Enter file name: ";
+    cin >> f_name;
+    out.open("save" + f_name + ".txt");
+    if (out.is_open()) {
+        out << strings << endl;
+        out.close();
+        cout << "File has been saved " << endl;
+    }
+    else {
+        cout << "empty vec" << endl;
+    };
+
+};
+*/
+
 int main()
 {   
     const string inputCatalog = "input/";
@@ -92,7 +131,8 @@ int main()
         new InsertionSort(),
         new ChoiceSort(),
         new MergeSort(),
-        new BubleSort()
+        new BubleSort(),
+        new ShaikerSort()
     };
 
     while (true) {
@@ -113,10 +153,10 @@ int main()
         cout << fullStr << endl;
 
         // Валидация текста
-        if (!validateString(fullStr)) {
+        /*if (!validateString(fullStr)) {
             cout << "% ERROR! file \"" << fileName << "\" is invalid" << endl;
             continue;
-        }
+        }*/
         cout << endl;
 
         // Разбиение текста по словам
