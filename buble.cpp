@@ -7,7 +7,7 @@ using namespace std;
 
 BubleSort::BubleSort()
 {
-    this->sorterName = "insertion sort";
+    this->sorterName = "buble sort";
 }
 
 void BubleSort::Sort(vector<string>& words) {

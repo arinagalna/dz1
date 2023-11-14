@@ -13,6 +13,7 @@
 #include "insertion_sort.h"
 #include "mergeSort.h"
 #include "sortChoice.h"
+#include "buble.h"
 
 using namespace std;
 using namespace std::chrono;
@@ -90,7 +91,8 @@ int main()
         new QuickSort(),
         new InsertionSort(),
         new ChoiceSort(),
-        new MergeSort()
+        new MergeSort(),
+        new BubleSort()
     };
 
     while (true) {

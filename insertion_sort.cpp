@@ -12,7 +12,10 @@ InsertionSort::InsertionSort()
 
 
 // Функция для сортировки вектора строк методом вставок
-void insertionSort(vector<string>& words) {
+void InsertionSort::Sort(vector<string>& words){
+    if (words.size() == 0) {
+        return;
+    }
     // Получение размера вектора
     int n = words.size();
 
