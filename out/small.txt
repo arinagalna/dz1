@@ -1,0 +1,25 @@
+% "quick sort"
+% time: 18
+% reference sorted words from quick sort:
+a b c d
+
+% "insertion sort"
+% time: 24
+a b c d
+
+% "choice sort"
+% time: 4
+a b c d
+
+% "merge sort"
+% time: 105
+a b c d
+
+% "buble sort"
+% time: 4
+a b c d
+
+% "shaiker sort"
+% time: 4
+a b c d
+

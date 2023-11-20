@@ -1,0 +1,20 @@
+% "quick sort"
+% time: 771
+% reference sorted words from quick sort:
+Aenean Aenean Aenean Aenean Aenean Aliquam Cras Cum Curabitur Donec Donec Donec Donec Duis Etiam Etiam Etiam In Integer Lorem Maecenas Maecenas Nam Nam Nulla Nullam Nullam Phasellus Quisque Sed Sed Vivamus a a ac adipiscing adipiscing aliquet amet amet amet amet ante ante ante arcu augue augue bibendum blandit commodo condimentum consectetuer consequat consequat consequat cursus dapibus dapibus dictum dis dolor dolor dui eget eget eget eget eget eget eleifend eleifend elementum elit enim enim enim eros et et eu eu eu faucibus faucibus felis felis feugiat fringilla fringilla hendrerit id imperdiet imperdiet in ipsum ipsum justo justo justo laoreet leo leo leo libero libero ligula ligula lorem lorem luctus magna magnis massa massa mauris metus mollis montes mus nascetur natoque nec nec nec neque nibh nisi nisi nisi nulla nunc nunc odio orci parturient pede pede pellentesque penatibus porttitor pretium pretium pulvinar quam quam quam quis quis quis quis rhoncus rhoncus rhoncus ridiculus rutrum sagittis sapien sed sem sem sem semper semper sit sit sit sit sociis sodales sodales tellus tellus tellus tempus tempus tincidunt tincidunt tincidunt ullamcorper ultricies ultricies ultricies ut ut ut varius vel vel vel velit venenatis venenatis vitae vitae vitae viverra viverra vulputate vulputate
+
+% "insertion sort"
+% time: 660
+
+% "choice sort"
+% time: 1876
+
+% "merge sort"
+% time: 3215
+
+% "buble sort"
+% time: 29
+
+% "shaiker sort"
+% time: 29
+

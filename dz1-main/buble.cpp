@@ -27,7 +27,10 @@ void BubleSort::Sort(vector<string>& words) {
             }
         }
 
-     
+        // If no two elements were swapped 
+        // by inner loop, then break 
+        if (swapped == false)
+            break;
     }
 }
 

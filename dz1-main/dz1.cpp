@@ -7,7 +7,6 @@
 #include <fstream>
 #include <regex>
 #include <chrono> 
-#include <ctime>  
 #include <filesystem>
 
 #include "sorter.h" 
@@ -90,7 +89,26 @@ bool equalStrings(const vector<string>& stringsA, const vector<string>& stringsB
     return true;
 }
 
+/*
+void save_file(const vector<string>& strings)
+{   
 
+    ofstream out;
+    string f_name;
+    cout << "Enter file name: ";
+    cin >> f_name;
+    out.open("save" + f_name + ".txt");
+    if (out.is_open()) {
+        out << strings << endl;
+        out.close();
+        cout << "File has been saved " << endl;
+    }
+    else {
+        cout << "empty vec" << endl;
+    };
+
+};
+*/
 
 int main()
 {   
@@ -100,7 +118,6 @@ int main()
 
     // Инициализация сортировок
     Sorter* sorters[]{
-        
         new QuickSort(),
         new InsertionSort(),
         new ChoiceSort(),
@@ -124,7 +141,7 @@ int main()
             cout << "% ERROR! File \"" << fileName << "\" is empty" << endl;
             continue;
         }
-        //cout << fullStr << endl;
+        cout << fullStr << endl;
 
         //Фильтр допустимых символов
         string result = filterString(fullStr);
@@ -143,30 +160,22 @@ int main()
         }
         for (int i = 0; i < size(sorters); i++) {
             Sorter* sorter = sorters[i];
-            clock_t start, end;
 
-            //auto start = high_resolution_clock::now();
-            //srand(time(0));
-            start = clock();
-            sorter->Sort(words); 
-            end = clock();
-            //system("pause");
-            //auto stop = high_resolution_clock::now();
+            auto start = high_resolution_clock::now();
+            sorter->Sort(words);
+            auto stop = high_resolution_clock::now();
 
-            //auto duration = duration_cast<microseconds>(stop - start);
+            auto duration = duration_cast<microseconds>(stop - start);
             cout << "% \"" << sorter->sorterName << "\"" << endl;
-            printf("The above code block was executed in %.4f second(s)\n", ((double)end - start) / ((double)CLOCKS_PER_SEC));
-
-            //cout << "runtime = " << clock() / 1000.0 << endl; // время работы программы 
-            //cout << "% time: " << duration.count() << endl;
+            cout << "% time: " << duration.count() << endl;
             file << "% \"" << sorter->sorterName << "\"" << endl;
             file << "% time: " << duration.count() << endl;
 
             // Результаты первой сортировки берутся как эталонные
             if (i == 0) {
                 referenceSortedWords = words;
-                //cout << "% reference sorted words from " << sorter->sorterName << ":" << endl;
-                //cout << stringsToLine(words) << endl;
+                cout << "% reference sorted words from " << sorter->sorterName << ":" << endl;
+                cout << stringsToLine(words) << endl;
                 file << "% reference sorted words from " << sorter->sorterName << ":" << endl;
                 file << stringsToLine(words) << endl;
             }
@@ -185,11 +194,8 @@ int main()
                         << " not equal with reference sorted" << sorters[0] << endl;
                 }
             }
-
             cout << endl;
             file << endl;
-            start = 0;
-            end = 0;
         }
         file.close();
         std::cout << "Successfully written to the file." << std::endl;

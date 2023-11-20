@@ -1,0 +1,25 @@
+% "quick sort"
+% time: 16
+% reference sorted words from quick sort:
+Lorem afg-fghj cd fgfg
+
+% "insertion sort"
+% time: 11
+Lorem afg-fghj cd fgfg
+
+% "choice sort"
+% time: 1
+Lorem afg-fghj cd fgfg
+
+% "merge sort"
+% time: 28
+Lorem afg-fghj cd fgfg
+
+% "buble sort"
+% time: 1
+Lorem afg-fghj cd fgfg
+
+% "shaiker sort"
+% time: 1
+Lorem afg-fghj cd fgfg
+
